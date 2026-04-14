@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Reset */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Fix Slick Slider Height */
+
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide > div{
+  height:100%;
+}
+
+/* Slider dots */
+
+.slick-dots{
+  bottom:30px;
+}
+
+.slick-dots li button:before{
+  color:white !important;
+}
+
+.slick-dots li.slick-active button:before{
+  color:#ef4444 !important;
+}
