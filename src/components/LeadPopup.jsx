@@ -127,7 +127,7 @@ export default function LeadPopup({ onClose }) {
               className="w-full border rounded-md px-3 py-2 mb-1"
             />
             {errors.name && (
-              <p className="text-red-500 text-sm mb-2">{errors.name}</p>
+              <p className="text-blue-500 text-sm mb-2">{errors.name}</p>
             )}
 
             {/* Phone */}
@@ -138,7 +138,7 @@ export default function LeadPopup({ onClose }) {
               className="w-full border rounded-md px-3 py-2 mb-1"
             />
             {errors.phone && (
-              <p className="text-red-500 text-sm mb-2">{errors.phone}</p>
+              <p className="text-blue-500 text-sm mb-2">{errors.phone}</p>
             )}
 
             {/* Pincode */}
@@ -149,7 +149,7 @@ export default function LeadPopup({ onClose }) {
               className="w-full border rounded-md px-3 py-2 mb-1"
             />
             {errors.pincode && (
-              <p className="text-red-500 text-sm mb-2">{errors.pincode}</p>
+              <p className="text-blue-500 text-sm mb-2">{errors.pincode}</p>
             )}
 
             {/* Email (Optional) */}
@@ -160,12 +160,12 @@ export default function LeadPopup({ onClose }) {
               className="w-full border rounded-md px-3 py-2 mb-1"
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mb-2">{errors.email}</p>
+              <p className="text-blue-500 text-sm mb-2">{errors.email}</p>
             )}
 
             <button
               type="submit"
-              className="w-full bg-red-500 text-white py-3 rounded-md font-semibold hover:bg-red-600 mt-3"
+              className="w-full bg-blue-500 text-white py-3 rounded-md font-semibold hover:bg-blue-600 mt-3"
             >
               CONTINUE
             </button>
