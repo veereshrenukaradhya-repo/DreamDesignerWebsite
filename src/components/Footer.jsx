@@ -18,7 +18,7 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex space-x-4 mb-6">
-
+{/* 
             <a href="https://facebook.com" target="_blank">
               <img src="/icons/facebook.svg" className="w-6 h-6 hover:opacity-70"/>
             </a>
@@ -33,7 +33,7 @@ export default function Footer() {
 
             <a href="https://youtube.com" target="_blank">
               <img src="/icons/youtube.svg" className="w-6 h-6 hover:opacity-70"/>
-            </a>
+            </a> */}
 
           </div>
 
