@@ -1,8 +1,9 @@
-const nextConfig = {
-  output: 'export',
-  basePath: '/DreamDesignerWebsite',
+module.exports = {
+  output: "export",
+  basePath: "/DreamDesignerWebsite",   // ✅ NO trailing slash
+  assetPrefix: "/DreamDesignerWebsite/", // keep slash here
   trailingSlash: true,
-  images: { unoptimized: true },
+  images: {
+    unoptimized: true,
+  },
 };
-
-module.exports = nextConfig;
