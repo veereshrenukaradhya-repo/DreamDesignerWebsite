@@ -13,7 +13,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center h-full">
          <Image
-            src="/images/DreamDesginStudioLogo.png"
+            src="images/DreamDesginStudioLogo.png"
             alt="Dream Design Studio Logo"
             width={200}
             height={100}
