@@ -6,12 +6,13 @@ import CategoryCards from "../components/CategoryCards";
 import LeadPopup from "../components/LeadPopup";
 import Footer from "../components/Footer";
 import CostCalculator from "../components/CostCalculator";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Home() {
 
   const [showPopup, setShowPopup] = useState(false);
 
-  // show popup after 10 seconds
+  // show popup after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
@@ -30,6 +31,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CategoryCards />
+      <WhatsAppButton />
       <CostCalculator />
       <Footer />
 
