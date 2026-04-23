@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
   output: "export",
-  distDir: "docs",   // ✅ VERY IMPORTANT (this fixes everything)
-  assetPrefix: "/DreamDesignerWebsite/",
+
+  basePath: isProd ? "/DreamDesignerWebsite" : "",
+  assetPrefix: isProd ? "/DreamDesignerWebsite/" : "",
+
   trailingSlash: true,
+
   images: {
     unoptimized: true,
   },
