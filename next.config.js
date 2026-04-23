@@ -2,8 +2,8 @@
 
 const nextConfig = {
   output: "export",
-  basePath: "/DreamDesignerWebsite",   // no trailing slash
-  assetPrefix: "/DreamDesignerWebsite/", // keep trailing slash
+  distDir: "docs",   // ✅ VERY IMPORTANT (this fixes everything)
+  assetPrefix: "/DreamDesignerWebsite/",
   trailingSlash: true,
   images: {
     unoptimized: true,
