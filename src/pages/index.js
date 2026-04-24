@@ -7,6 +7,7 @@ import LeadPopup from "../components/LeadPopup";
 import Footer from "../components/Footer";
 import CostCalculator from "../components/CostCalculator";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -26,7 +27,7 @@ export default function Home() {
       {showPopup && (
         <LeadPopup onClose={() => setShowPopup(false)} />
       )}
-
+      <Analytics/>
       <Navbar />
       <Hero />
       <CategoryCards />
