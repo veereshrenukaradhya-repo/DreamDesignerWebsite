@@ -2,7 +2,12 @@
 
 const nextConfig = {
   output: "export",
+
+  basePath: "/DreamDesignerWebsite",
+  assetPrefix: "/DreamDesignerWebsite/",
+
   trailingSlash: true,
+
   images: {
     unoptimized: true,
   },
