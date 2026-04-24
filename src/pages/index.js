@@ -23,11 +23,6 @@ export default function Home() {
   return (
     <div>
 
-      {/* 🔥 TAILWIND TEST BLOCK (DO NOT REMOVE YET) */}
-      <div className="bg-red-500 text-white text-3xl p-6 text-center">
-        Tailwind Test — If this is RED, Tailwind is working ✅
-      </div>
-
       {showPopup && (
         <LeadPopup onClose={() => setShowPopup(false)} />
       )}
