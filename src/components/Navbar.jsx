@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import ComingSoonPopup from "../components/ComingSoonPopup";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const [showComingSoon, setShowComingSoon] = useState(false);
   return (
     <header className="w-full bg-white shadow-md">
       
@@ -24,7 +25,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
-          <Link href="/kitchen" className="hover:text-blue-500">
+          {/* <Link href="/kitchen" className="hover:text-blue-500">
             Kitchen
           </Link>
 
@@ -34,17 +35,45 @@ export default function Navbar() {
 
           <Link href="/consultation" className="hover:text-blue-500">
             Consultation
-          </Link>
+          </Link> */}
+
+           <button
+              onClick={() => setShowComingSoon(true)}
+              className="hover:text-blue-500 font-medium"
+            >
+              Kitchen
+            </button>
+
+            <button
+              onClick={() => setShowComingSoon(true)}
+              className="hover:text-blue-500 font-medium"
+            >
+              Bedroom
+            </button>
+
+            <button
+              onClick={() => setShowComingSoon(true)}
+              className="hover:text-blue-500 font-medium"
+            >
+              Consultation
+            </button>
         </nav>
 
         {/* Right side */}
         <div className="flex items-center gap-4">
-          <Link
+            <button
+              onClick={() => setShowComingSoon(true)}
+              className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600 transition"
+            >
+              Get Free Quote
+            </button>
+          {/* <Link
             href="/consultation"
             className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600 transition"
           >
             Get Free Quote
-          </Link>
+          </Link> */}
+
 
           {/* Mobile Menu Button */}
           <button
@@ -57,7 +86,41 @@ export default function Navbar() {
 
       </div>
 
+
+
+
       {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden border-t">
+          <nav className="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
+
+            <button
+              onClick={() => setShowComingSoon(true)}
+              className="text-left hover:text-blue-500"
+            >
+              Kitchen
+            </button>
+
+            <button
+              onClick={() => setShowComingSoon(true)}
+              className="text-left hover:text-blue-500"
+            >
+              Bedroom
+            </button>
+
+            <button
+              onClick={() => setShowComingSoon(true)}
+              className="text-left hover:text-blue-500"
+            >
+              Consultation
+            </button>
+
+          </nav>
+        </div>
+      )}
+
+      {/* //uncomment above code and remove this comment when you want to enable mobile menu. Currently, it is disabled and shows coming soon popup for all 3 links in mobile view. */}
+      {/* Mobile Menu
       {open && (
         <div className="md:hidden border-t">
           <nav className="flex flex-col p-4 space-y-4">
@@ -66,6 +129,11 @@ export default function Navbar() {
             <Link href="/consultation">Consultation</Link>
           </nav>
         </div>
+      )} */}
+
+          {/* ✅ MUST be inside return */}
+      {showComingSoon && (
+        <ComingSoonPopup onClose={() => setShowComingSoon(false)} />
       )}
     </header>
   );

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useState } from "react";
+import ComingSoonPopup from "../components/ComingSoonPopup";
 import {
   FaFacebook,
   FaInstagram,
@@ -7,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const [showComingSoon, setShowComingSoon] = useState(false);
   return (
     <footer className="bg-[#2f2f3a] text-gray-300 mt-20">
 
@@ -64,9 +67,71 @@ export default function Footer() {
 
           </div>
         </div>
+<div>
+  <h3 className="text-white font-semibold mb-4">Offerings</h3>
 
+  <ul className="space-y-2 text-sm">
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Interiors
+      </button>
+    </li>
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Furnishings
+      </button>
+    </li>
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Kitchen Designs
+      </button>
+    </li>
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Wardrobe Designs
+      </button>
+    </li>
+
+  </ul>
+</div>
+<div>
+  <h3 className="text-white font-semibold mb-4">Get Inspired</h3>
+
+  <ul className="space-y-2 text-sm">
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Design Ideas
+      </button>
+    </li>
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Interior Magazine
+      </button>
+    </li>
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Dream Design TV
+      </button>
+    </li>
+
+    <li>
+      <button onClick={() => setShowComingSoon(true)} className="hover:text-blue-400">
+        Customer Stories
+      </button>
+    </li>
+
+  </ul>
+</div>
+{/* //the offerings and get inspired sections are commented out as they are not yet implemented, but can be easily added back in the future when those pages are ready. */}
         {/* Offerings */}
-        <div>
+        {/* <div>
           <h3 className="text-white font-semibold mb-4">Offerings</h3>
 
           <ul className="space-y-2 text-sm">
@@ -77,7 +142,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Get Inspired */}
+    
         <div>
           <h3 className="text-white font-semibold mb-4">Get Inspired</h3>
 
@@ -87,7 +152,7 @@ export default function Footer() {
             <li><Link href="/tv">Dream design TV</Link></li>
             <li><Link href="/stories">Customer Stories</Link></li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact */}
         <div>
@@ -117,6 +182,10 @@ export default function Footer() {
         © {new Date().getFullYear()} Dream Designer. All Rights Reserved.
       </div>
 
+
+    {showComingSoon && (
+      <ComingSoonPopup onClose={() => setShowComingSoon(false)} />
+    )}
     </footer>
   );
 }

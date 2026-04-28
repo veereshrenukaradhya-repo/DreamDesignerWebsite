@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-
+import ComingSoonPopup from "../components/ComingSoonPopup";
+  
 export default function CostCalculator() {
   const router = useRouter();
-
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const cards = [
     {
       title: "Full Home Interior",
@@ -92,7 +93,8 @@ export default function CostCalculator() {
                 </p>
 
                 <button
-                  onClick={() => router.push("/homeCalculator")}
+                  // onClick={() => router.push("/homeCalculator")}
+                   onClick={() => setShowComingSoon(true)}
                   className="bg-blue-500 text-white px-8 py-3 rounded-full w-full hover:bg-blue-600"
                 >
                   CALCULATE →
@@ -103,6 +105,10 @@ export default function CostCalculator() {
 
         </div>
       </div>
+      {/* ✅ MUST be inside return */}
+        {showComingSoon && (
+          <ComingSoonPopup onClose={() => setShowComingSoon(false)} />
+        )}
     </section>
   );
 }

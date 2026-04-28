@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
+import ComingSoonPopup from "../components/ComingSoonPopup";
 
 export default function Hero() {
+    const [showComingSoon, setShowComingSoon] = useState(false);
+
   const images = [
     "images/livingroom1.jpg",
     "images/livingroom2.jpg",
@@ -51,11 +54,16 @@ export default function Hero() {
           />
         </h1>
 
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold">
+        <button onClick={() => setShowComingSoon(true)}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold">
           GET INSTANT ESTIMATE
         </button>
 
       </div>
+             {/* ✅ MUST be inside return */}
+        {showComingSoon && (
+          <ComingSoonPopup onClose={() => setShowComingSoon(false)} />
+        )}
     </section>
   );
 }
