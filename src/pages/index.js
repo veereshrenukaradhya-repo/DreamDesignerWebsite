@@ -7,6 +7,9 @@ import LeadPopup from "../components/LeadPopup";
 import Footer from "../components/Footer";
 import CostCalculator from "../components/CostCalculator";
 import WhatsAppButton from "../components/WhatsAppButton";
+import Testimonials from '../components/Testimonials';
+
+
 import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
@@ -33,8 +36,8 @@ export default function Home() {
       <CategoryCards />
       <WhatsAppButton />
       <CostCalculator />
+      <Testimonials />
       <Footer />
-
     </div>
   );
 }
